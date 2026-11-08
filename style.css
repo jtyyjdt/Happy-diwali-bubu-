@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(ellipse at top, #21143c, #080817 65%, #03030b);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(2px 2px at 70% 20%, #ffd77a, transparent),
+    radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 65%, #fff, transparent),
+    radial-gradient(2px 2px at 10% 75%, #ffd77a, transparent);
+  background-size: 250px 250px;
+  animation: starsMove 15s linear infinite;
+}
+
+@keyframes starsMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-250px); }
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 750px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 65px 20px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-label {
+  color: #e9c77b;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.diya {
+  font-size: 85px;
+  filter: drop-shadow(0 0 20px #ffb52e);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px #ffb52e); }
+  to { filter: drop-shadow(0 0 35px #ffcc55); }
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(55px, 12vw, 85px);
+  color: #ffdc91;
+  text-shadow: 0 0 20px #d99b37;
+  margin-top: 15px;
+}
+
+h2 {
+  color: #fff0c8;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.subtitle {
+  color: #d6c8e8;
+  font-size: 13px;
+  margin-top: 18px;
+  line-height: 1.8;
+}
+
+.divider {
+  color: #f2c46e;
+  margin: 25px 0;
+  letter-spacing: 8px;
+}
+
+button {
+  border: 1px solid #f8d68a;
+  background: linear-gradient(135deg, #a56b21, #e7b64e, #9e641c);
+  color: #160d12;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 25px #e7b64e55;
+  transition: .3s;
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 0 35px #ffcb65;
+}
+
+.surprise {
+  width: 100%;
+  margin-top: 40px;
+  animation: reveal 1.2s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-card {
+  background: linear-gradient(145deg, #ffffff12, #ffffff05);
+  border: 1px solid #d9b66d77;
+  border-radius: 22px;
+  padding: 30px 25px;
+  box-shadow: 0 0 40px #dba74a20;
+  backdrop-filter: blur(12px);
+}
+
+.card-diya {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.message-card h3 {
+  font-family: 'Great Vibes', cursive;
+  color: #ffdc91;
+  font-size: 38px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.message {
+  color: #f0e6d8;
+  font-size: 13px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.final-wish {
+  font-family: 'Great Vibes', cursive;
+  color: #ffd77d;
+  font-size: 36px;
+  margin-top: 25px;
+}
+
+.signature {
+  color: #e6d9c9;
+  font-size: 13px;
+  margin-top: 22px;
+  line-height: 2;
+}
+
+.signature span {
+  color: #ffd77d;
+  font-size: 19px;
+  font-family: 'Great Vibes', cursive;
+}
+
+#fireBtn {
+  margin-top: 28px;
+}
+
+.ending {
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  color: #ffdc91;
+  margin-top: 30px;
+  animation: reveal 1s ease;
+}
+
+.footer {
+  color: #8f849f;
+  font-size: 10px;
+  margin-top: auto;
+  padding-top: 50px;
+  letter-spacing: 1px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  z-index: 3;
+  animation: floatHeart 6s linear forwards;
+}
+
+@keyframes floatHeart {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 50px 17px 25px;
+  }
+
+  .message-card {
+    padding: 25px 19px;
+  }
+
+  .message {
+    font-size: 12px;
+    line-height: 1.9;
+  }
+}
